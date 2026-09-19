@@ -1,0 +1,23 @@
+# Learn more about configuring your checkout UI extension:
+# https://shopify.dev/docs/api/checkout-ui-extensions/configuration
+#
+# `uid` is intentionally omitted — Shopify CLI generates and writes it the
+# first time you run `shopify app deploy` from inside your app.
+
+api_version = "2026-01"
+
+[[extensions]]
+name = "free-shipping-progress"
+handle = "free-shipping-progress"
+type = "ui_extension"
+
+[[extensions.targeting]]
+target = "purchase.checkout.block.render"
+module = "./src/Checkout.jsx"
+
+[extensions.settings]
+[[extensions.settings.fields]]
+key = "freeShippingThreshold"
+type = "number_decimal"
+name = "Free shipping threshold"
+description = "Cart subtotal (in the store's currency) that unlocks free shipping, e.g. 75."

@@ -1,0 +1,14 @@
+{
+  "name": "shopify-checkout-ui-extensions",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Free, copy-paste Shopify Checkout UI Extension examples: an order note, a free-shipping progress bar, a PO Box delivery guard, and a Thank You page recap.",
+  "scripts": {
+    "test": "vitest run"
+  },
+  "devDependencies": {
+    "vitest": "^3.2.4"
+  },
+  "license": "MIT"
+}

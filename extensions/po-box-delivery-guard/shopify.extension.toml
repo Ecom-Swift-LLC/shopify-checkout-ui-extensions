@@ -1,0 +1,22 @@
+# Learn more about configuring your checkout UI extension:
+# https://shopify.dev/docs/api/checkout-ui-extensions/configuration
+#
+# `uid` is intentionally omitted — Shopify CLI generates and writes it the
+# first time you run `shopify app deploy` from inside your app.
+#
+# Reading shopify.shippingAddress requires your app to have level 2 access
+# to protected customer data, approved by Shopify. See the README.
+
+api_version = "2026-01"
+
+[[extensions]]
+name = "po-box-delivery-guard"
+handle = "po-box-delivery-guard"
+type = "ui_extension"
+
+[[extensions.targeting]]
+target = "purchase.checkout.block.render"
+module = "./src/Checkout.jsx"
+
+[extensions.capabilities]
+block_progress = true

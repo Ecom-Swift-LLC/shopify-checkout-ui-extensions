@@ -1,0 +1,16 @@
+# Learn more about configuring your checkout UI extension:
+# https://shopify.dev/docs/api/checkout-ui-extensions/configuration
+#
+# `uid` is intentionally omitted — Shopify CLI generates and writes it the
+# first time you run `shopify app deploy` from inside your app.
+
+api_version = "2026-01"
+
+[[extensions]]
+name = "thank-you-order-recap"
+handle = "thank-you-order-recap"
+type = "ui_extension"
+
+[[extensions.targeting]]
+target = "purchase.thank-you.block.render"
+module = "./src/ThankYou.jsx"

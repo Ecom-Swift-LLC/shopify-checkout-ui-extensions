@@ -1,0 +1,23 @@
+# Learn more about configuring your checkout UI extension:
+# https://shopify.dev/docs/api/checkout-ui-extensions/configuration
+#
+# `uid` is intentionally omitted — Shopify CLI generates and writes it the
+# first time you run `shopify app deploy` from inside your app.
+
+api_version = "2026-01"
+
+[[extensions]]
+name = "order-note"
+handle = "order-note"
+type = "ui_extension"
+
+[[extensions.targeting]]
+target = "purchase.checkout.block.render"
+module = "./src/Checkout.jsx"
+
+[extensions.settings]
+[[extensions.settings.fields]]
+key = "maxLength"
+type = "number_integer"
+name = "Character limit"
+description = "Maximum number of characters allowed in the delivery note (default 140)."
